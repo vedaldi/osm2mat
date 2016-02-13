@@ -11,7 +11,8 @@ lines=geo2xy(osmgetlines(map, hw)) ; plot(lines(1,:), lines(2,:), 'b-', 'linewid
 lines=geo2xy(osmgetlines(map, bl)) ; plot(lines(1,:), lines(2,:), 'g-', 'linewidth', 0.75) ;
 lines=geo2xy(osmgetlines(map, ot)) ; plot(lines(1,:), lines(2,:), 'k-', 'linewidth', 0.5) ;
 
+set(gca,'ydir','reverse') ;
 xlabel('Web Mercator X') ;
-xlabel('Web Mercator Y') ;
+ylabel('Web Mercator Y') ;
 legend('highways', 'building', 'other') ; title('OSM in MATLAB') ;
 axis equal ; box on ;

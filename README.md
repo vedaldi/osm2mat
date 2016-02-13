@@ -34,4 +34,4 @@ axis equal ; box on ;
 
 will produce the MATLAB figure below:
 
-![MATLAB figure](oxford.svg "MATLAB rendering of the `oxford.osm` file.")
+![MATLAB figure](oxford.png "MATLAB rendering of the `oxford.osm` file.")

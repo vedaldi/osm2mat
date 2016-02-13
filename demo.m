@@ -7,8 +7,11 @@ hw = find([map.ways.isHighway]) ;
 bl = find([map.ways.isBuilding]) ;
 ot = setdiff(1:numel(map.ways), [hw, bl]) ;
 
-lines=osmgetlines(map, hw) ; plot(lines(1,:), lines(2,:), 'b-', 'linewidth', 2) ;
-lines=osmgetlines(map, bl) ; plot(lines(1,:), lines(2,:), 'g-', 'linewidth', 1) ;
-lines=osmgetlines(map, ot) ; plot(lines(1,:), lines(2,:), 'k-', 'linewidth', 1) ;
+lines=osmgetlines(map, hw) ; plot(lines(2,:), lines(1,:), 'b-', 'linewidth', 1.5) ;
+lines=osmgetlines(map, bl) ; plot(lines(2,:), lines(1,:), 'g-', 'linewidth', 0.75) ;
+lines=osmgetlines(map, ot) ; plot(lines(2,:), lines(1,:), 'k-', 'linewidth', 0.5) ;
 
-axis equal ; legend('highways', 'building', 'other') ;
+xlabel('longitude') ;
+xlabel('latitude') ;
+legend('highways', 'building', 'other') ; title('OSM in MATLAB') ;
+axis equal ; box on ;

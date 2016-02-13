@@ -3,10 +3,13 @@ function map = loadosm(filePath)
 %   MAP = LOADOSM(FILEPATH) loads the specified file as a MATLAB
 %   structure. The structure `map` contains:
 %
-%   * `map.nodes`: the map nodes, with `id`, `lat` and `lon`.
+%   * `map.nodes`: the map nodes  with:
+%      * `id`: a numerical ID (unit64).
+%      * `lat`: latitude (double).
+%      * `lon`: longitude (double).
 %   * `map.ways`: the map ways with:
-%      * `id`: a numerical id
-%      * `nds`: a list of node IDs
+%      * `id`: a numerical ID (unit64).
+%      * `nds`: a list of node IDs (uint64).
 %      * `tags`: a Nx2 cell array of pairs of strings key=value.
 %
 %   The structure contains also the following additional
@@ -100,7 +103,7 @@ function map = parseWay(opts, map, xml)
 % -------------------------------------------------------------------------
 
 way.id = zeros(1,1,'uint64') ;
-way.nds = [] ;
+way.nds = zeros(1,0,'uint64') ; ;
 way.tags = {} ;
 attrs = xml.getAttributes() ;
 for a = 1:attrs.getLength() ;
